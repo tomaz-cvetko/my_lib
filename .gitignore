@@ -1,6 +1,15 @@
 # Prerequisites
 *.d
 
+# CMake and KDevelop stuff
+*.kdev4
+.kdev4/*
+.kdev4
+/build/*
+/build/
+
+
+
 # Compiled Object files
 *.slo
 *.lo
