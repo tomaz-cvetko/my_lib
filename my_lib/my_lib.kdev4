@@ -1,0 +1,3 @@
+[Project]
+Name=my_lib
+Manager=KDevCMakeManager
