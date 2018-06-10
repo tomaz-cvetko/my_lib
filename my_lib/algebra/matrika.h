@@ -21,6 +21,7 @@ namespace my
         
         double get(int i, int j) const;
         
+        DMatrix operator*(const DMatrix& rhs) const;
         
     private:
         double** matrix;

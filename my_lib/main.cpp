@@ -4,18 +4,17 @@
 
 int main(int argc, char **argv) {
     
-    my::Vektor<float> a(3.12, 4.15, 2.6);
+    my::DMatrix a(2, 3);
+    my::DMatrix b(3, 1);
+    std::cout << a << "\n" << b <<std::endl;
+    a.randomize(-5, 5);
+    b.randomize(-5, 5);
+    std::cout << a << "\n" << b <<std::endl;
     
-    my::Vektor<float> b = my::Vektor<float>::fromCylindric(2.00, 3.14, 1.12);
+    my::DMatrix c = a*b;
     
-    std::cout << a*b;
-    std::cout << a;
     
-    my::DMatrix c(10, 5);
-    std::cout << std::endl << c;
-    c.randomize(-2.9, 12.5);
-    std::cout << c;
     
-    std::cout << "Hello, world!" << std::endl;
+    //std::cout << "Hello, world!" << std::endl;
     return 0;
 }

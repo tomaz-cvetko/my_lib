@@ -40,7 +40,8 @@ namespace my
             return Vektor(x+rhs.x, y+rhs.y, z+rhs.z);
         }
         
-        Vektor<T> operator-(const Vektor<T>& rhs){
+        Vektor<T> operator-(const Vektor<T>& rhs)
+        {
             return Vektor(x-rhs.x, y-rhs.y, z-rhs.z);
         }
         

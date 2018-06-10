@@ -21,6 +21,9 @@ my::DMatrix::~DMatrix()
     delete matrix;
 }
 
+
+
+
 std::ostream& operator<<(std::ostream& os, const my::DMatrix& obj)
 {
     for(int i = 0; i < obj.m; ++i){
@@ -65,6 +68,28 @@ void my::DMatrix::randomize(double max, double min)
         }
     }
 }
+
+my::DMatrix my::DMatrix::operator*(const my::DMatrix& rhs) const
+{
+    if(this->n != rhs.m){
+        throw std::out_of_range("Matrices are of wrong dimensions!");
+    }
+    else{
+        my::DMatrix result(this->m, rhs.n);
+        
+        for(int i = 0; i < this->m; ++i){
+            for(int j = 0; j < rhs.n; ++j){
+                double result_ij = 0.0;
+                for(int k = 0; k < this->n; ++k){
+                    result_ij += this->matrix[i][k]*rhs.matrix[k][j];
+                }
+                result.matrix[i][j] = result_ij;
+            }
+        }
+        return result;
+    }
+}
+
 
 
 
